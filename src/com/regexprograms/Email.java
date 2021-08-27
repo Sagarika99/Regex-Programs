@@ -6,12 +6,15 @@ import java.util.regex.Pattern;
 public class Email {
 	public static void main(String[] args) {
 		
-		Pattern pattern = Pattern.compile("^([a-z\\.a-z]*)");
+		Pattern pattern = Pattern.compile("^([a-z\\.a-z]*)(@[a-z]*)([\\.a-z]*)$");
 		String expression = "abc.xyz@bridgelabz.co.in";
 		Matcher matcher = pattern.matcher(expression);
 		
 		if (matcher.find()) {
 			System.out.println("Found value: " +matcher.group(0));
+			System.out.println("Found value: " +matcher.group(1));
+			System.out.println("Found value: " +matcher.group(2));
+			System.out.println("Found value: " +matcher.group(3));
 		}
 	}
 
